@@ -4,6 +4,10 @@ from django.shortcuts import render, redirect
 
 
 
-def pagina_inicial(request):
+def pagina_inicial_view(request):
 
-    return render (request, "principal.html")
+    return render (request, "index.html")
+
+def apps_view(request):
+
+    return render(request, "apps.html")

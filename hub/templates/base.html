@@ -1,0 +1,34 @@
+{% load staticfiles%}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta content='user-scalable=no' name='viewport' />
+		<title>
+			{% block title %}{% endblock %}
+		</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+		<link rel="stylesheet" href="{% static 'css/base.css' %}">
+		<script src="{% static 'js/jQuery-1.11.3.min.js' %}"></script>
+		<script src="{% static 'js/bootstrap.js' %}"></script>
+
+		{% block extracss %}{% endblock %}
+
+	</head>
+
+	<body>
+		<div id="wrapper">
+		<span class='left'></span>
+		<div id="conteudo">
+
+			{% block content %}{% endblock %}
+
+	</div>
+	</div>
+
+	{% block extrajs %}{% endblock %}
+	
+	</body>
+</html>

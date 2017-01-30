@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}HUB{% endblock %}
+
+
+{% block extracss %}<link rel="stylesheet" href="{% static 'hub/css/index.css' %}">{% endblock %}
+
+{% block content%}
+<div class="popup">
+        <div class="row text-center">
+                <img src="{% static 'hub/img/crown.png' %}" style="margin-top:20%;">
+        </div>
+        <div class="row" style="margin-top:5%;">
+                <p class="text-center bold text">H U B</p>
+        </div>
+        <div class="row">
+                <p class="text-center light text" style="width: 500px;">Escolha um destino em meu Hub</p>
+        </div>
+        <div class="box">
+                <span class="left-arrow transit grow-big"></span>
+                <div class="carousel text-center transit grow-little">
+                        <div class="esquerda transit item-carousel">Apps python</div>
+                        <div class="direita transit item-carousel">Experimentos Webdesign</div>
+                </div>
+                <span class="right-arrow transit grow-big"></span>
+        </div>
+</div>
+{% endblock %}
+
+{% block extrajs %}<script src="{% static 'hub/js/index.js' %}"></script>{% endblock %}

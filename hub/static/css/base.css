@@ -1,0 +1,19 @@
+body{
+    background: #fbfdfe;
+}
+#wrapper{
+	position: relative;
+	height: 100vh;
+}
+.left {
+  display: block;
+  width: 75vw;
+  height: 100%;
+  background: #68B7F6;
+  -webkit-transform: skew(-16deg) translateX(-25vw);
+}
+#conteudo{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
