@@ -3,6 +3,7 @@
 <html>
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta content='user-scalable=no' name='viewport' />
 		<title>Hub</title>
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -11,6 +12,7 @@
 
 		<script src="{% static 'js/jQuery-1.11.3.min.js' %}"></script>
 		<script src="{% static 'js/bootstrap.js' %}"></script>
+		<script src="{% static 'js/principal.js' %}"></script>
 	</head>
 
 	<body>
@@ -27,22 +29,14 @@
 					<p class="text-center light text" style="width: 500px;">Escolha um destino em meu Hub</p>
 				</div>
 				<div class="box">
-					<span class="right-arrow"></span>
-					<div class="carousel text-center">
-						<div class="esquerda">Zona 51</div>
-						<div class="direita">Outfit</div>
+					<span class="left-arrow transit grow"></span>
+					<div class="carousel text-center transit grow">
+						<div class="esquerda transit">Expo's</div>
+						<div class="direita transit">Apps</div>
 					</div>
-					<span class="left-arrow"></span>
+					<span class="right-arrow transit grow"></span>
 				</div>
 			</div>
 		</div>
-
-		<script type="text/javascript">
-				$(document).ready(function(){
-					$(".carousel").click(function(){
-						$(".carousel div").toggleClass("teste")
-					})
-				})
-		</script>
 	</body>
 </html>
