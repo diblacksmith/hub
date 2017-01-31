@@ -20,12 +20,24 @@
         <div class="box">
                 <span class="left-arrow transit grow-big"></span>
                 <div class="carousel text-center transit grow-little">
-                        <div class="esquerda transit item-carousel">Apps python</div>
-                        <div class="direita transit item-carousel">Experimentos Webdesign</div>
+                        <div class="esquerda transit item-carousel">Experimentos Webdesign</div>
+                        <div class="direita transit item-carousel">Apps python</div>
                 </div>
                 <span class="right-arrow transit grow-big"></span>
         </div>
 </div>
 {% endblock %}
 
-{% block extrajs %}<script src="{% static 'hub/js/index.js' %}"></script>{% endblock %}
+{% block extrajs %}
+<script src="{% static 'hub/js/index.js' %}"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".esquerda").click(function(){
+            window.location.href = "{% url 'principal:experimentos_view'%}"
+        })
+        $(".direita").click(function(){
+            window.location.href = "{% url 'principal:apps_view'%}"
+        })
+    })
+</script>
+{% endblock %}

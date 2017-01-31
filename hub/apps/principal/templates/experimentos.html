@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}HUB{% endblock %}
+
+
+{% block extracss %}<link rel="stylesheet" href="{% static 'hub/css/experimentos.css' %}">{% endblock %}
+
+{% block content%}
+    <div class="popup">
+
+        <div class="card">
+            <div class="header text-center">
+                <div class="inside">
+
+                </div>
+            </div>
+            <div class="body text-center">
+                <p class="ubold">Torre de Hanoi</p>
+                <p class="ulight">Jogo desenvolvido na ECT</p>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block extrajs %}<script src="{% static 'hub/js/experimentos.js' %}"></script>{% endblock %}

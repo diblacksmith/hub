@@ -9,5 +9,7 @@ def pagina_inicial_view(request):
     return render (request, "index.html")
 
 def apps_view(request):
-
     return render(request, "apps.html")
+
+def experimentos_view(request):
+    return render(request, "experimentos.html")

@@ -1,21 +1,11 @@
 @font-face {
-	font-family: 'OpenSans';
-	src: url("../font/Open_Sans/OpenSans-Regular.ttf");
+	font-family: 'Ubuntu-Bold';
+	src: url("../font/Ubuntu/Ubuntu-Bold.ttf");
 	font-size: 1em;
 }
 @font-face {
-	font-family: 'OpenSans-Light';
-	src: url("../font/Open_Sans/OpenSans-Light.ttf");
-	font-size: 1em;
-}
-@font-face {
-	font-family: 'Montserrat';
-	src: url("../font/Montserrat/Montserrat-Regular.ttf");
-	font-size: 1em;
-}
-@font-face {
-	font-family: 'Montserrat-Bold';
-	src: url("../font/Montserrat/Montserrat-Bold.ttf");
+	font-family: 'Ubuntu-Light';
+	src: url("../font/Ubuntu/Ubuntu-Light.ttf");
 	font-size: 1em;
 }
 @-webkit-keyframes swing
@@ -65,11 +55,11 @@
 }
 
 .bold{
-    font-family: 'Montserrat';
+    font-family: 'Ubuntu-Bold';
     font-size: 2em;
 }
 .light{
-    font-family: 'OpenSans-Light';
+    font-family: 'Ubuntu-Light';
     font-size: 1.5em;
 }
 .carousel{
@@ -79,13 +69,12 @@
     line-height: 300%;
 	height: 100px;
     border-radius: 30px;
-    font-family: 'Montserrat';
+    font-family: 'Ubuntu-Bold';
     font-size: 1.5em;
     box-shadow: 0px 20px 50px #748da6;
 	margin: 50px 0 30px 85px;
 	overflow: hidden;
 	position: relative;
-	font-family: 'Montserrat-Bold';
 	z-index: 10
 
 }
