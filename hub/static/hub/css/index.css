@@ -98,7 +98,7 @@
 	position: absolute;
 	right: 0;
 	top: 0;
-	background-image: url('../img/angle-right.png');
+	background-image: url('../img/angle-right.svg');
     background-repeat: no-repeat;
     background-size: 32px;
     background-position: 95% 50%;
@@ -109,7 +109,7 @@
 	margin: 30px;
 	position: absolute;
 	top: 0;
-	background-image: url('../img/angle-left.png');
+	background-image: url('../img/angle-left.svg');
     background-repeat: no-repeat;
     background-size: 32px;
     background-position: 5% 50%;

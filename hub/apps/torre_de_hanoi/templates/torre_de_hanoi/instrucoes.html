@@ -1,0 +1,60 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title>Torre de Hanoi - Instruções</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'torre_de_hanoi/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'torre_de_hanoi/css/bootstrap-theme.min.css' %}">
+    <script src="{% static 'torre_de_hanoi/js/jquery.min.js' %}"></script>
+    <script src="{% static 'torre_de_hanoi/js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'torre_de_hanoi/css/instrucoes.css' %}">
+    <link rel="stylesheet" href="{% static 'torre_de_hanoi/css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'torre_de_hanoi/css/bootstrap-toggle.min.css' %}"/>
+    <script src="{% static 'torre_de_hanoi/js/bootstrap-toggle.min.js' %}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <p id="head" class="bg-primary">Instruções</p>
+        <div class="col-md-5">
+            <p class="bg-success">Como jogar?</p>
+            <p>O objetivo deste jogo consiste em deslocar todos os discos da haste onde se encontram para uma haste
+                diferente, respeitando as seguintes regras:</p>
+            <ul>
+                <li>Deslocar um disco de cada vez, o qual deverá ser o do topo de uma das três hastes;</li>
+                <li>Cada disco nunca poderá ser colocado sobre outro de diâmetro menor.</li>
+            </ul>
+            <img id='exemplo' src="{% static 'torre_de_hanoi/images/hanoi.gif' %}" alt="">
+        </div>
+        <div class="col-md-5">
+            <p class="bg-danger">Origem</p>
+            <p>Existem várias lendas a respeito da origem do jogo, a mais conhecida diz respeito a um templo Hindu,
+                situado no centro do universo. Diz-se que Brama supostamente havia criado uma torre com 64 discos de
+                ouro e mais duas estacas equilibradas sobre uma plataforma. Brama ordenara-lhes que movessem todos os
+                discos de uma estaca para outra segundo as suas instruções. As regras eram simples: apenas um disco
+                poderia ser movido por vez e nunca um disco maior deveria ficar por cima de um disco menor. Segundo a
+                lenda, quando todos os discos fossem transferidos de uma estaca para a outra, o templo iria desmoronar e
+                o mundo desapareceria.</p>
+        </div>
+        <div class="col-md-2">
+            <p class="bg-info">Vamos lá?</p>
+            <br>
+            <button type="button" class="btn btn-success btn-block glyphicon glyphicon-play" data-toggle="modal"
+                    data-target="#myModal"></button>
+            <br><br>
+            <a href="{% url 'torre_de_hanoi:index' %}" class="btn btn-info btn-block glyphicon glyphicon-home"
+               style="background-color: #CCCCCC;"></a>
+
+        </div>
+
+        {% include 'torre_de_hanoi/modal_de_dificuldades.html' %}
+    </div>
+
+</div>
+
+
+</body>
+</html>

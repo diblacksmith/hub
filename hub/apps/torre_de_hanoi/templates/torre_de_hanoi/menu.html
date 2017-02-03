@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<html>
+<head>
+
+    <title>Torre de Hanoi - Menu</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'torre_de_hanoi/css_e_scripts.html' %}
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="wrapper">
+        <img class="form-signin-heading" src="{% static 'torre_de_hanoi/images/logo.png' %}"/>
+        <hr>
+        <br>
+
+        <button type="button" class="btn btn-info btn-lg btn-block picks" data-toggle="modal" data-target="#myModal">
+            VAMOS
+            JOGAR
+        </button>
+        <a href="{% url 'torre_de_hanoi:instrucoes' %}" class="btn btn-lg btn-warning btn-block picks" type="button">INSTRUÇÕES</a>
+        <a href="{% url 'torre_de_hanoi:sair_do_jogo'%}" class="btn btn-lg btn-danger btn-block picks" id="sair">SAIR</a>
+
+        {% include 'torre_de_hanoi/modal_de_dificuldades.html' %}
+
+    </div>
+</div>
+</body>
+</html>

@@ -44,6 +44,7 @@ DEFAULT_APPS = [
 
 CUSTOM_APPS = [
     'principal',
+    'torre_de_hanoi'
 ]
 
 INSTALLED_APPS = DEFAULT_APPS + CUSTOM_APPS
