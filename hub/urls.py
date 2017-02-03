@@ -10,4 +10,5 @@ urlpatterns = [
     #Apps python
     url(r'^apps_python/$', apps_view, name="apps_view"),
     url(r'^apps_python/torre_de_hanoi/', include('torre_de_hanoi.urls', namespace='torre_de_hanoi')),
+    url(r'^apps_python/smartZeus/', include('smartZeus.urls', namespace='smartZeus'))
 ]

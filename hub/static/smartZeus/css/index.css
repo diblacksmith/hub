@@ -87,9 +87,9 @@
         transform: scale(1.1);
 }
 .grow-big:hover{
-        -webkit-transform: scale(2.0);
-        -ms-transform: scale(2.0);
-        transform: scale(2.0);
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
 }
 .right-arrow{
 	width: 50px;
@@ -119,6 +119,14 @@
 	float: left;
 	margin: 20px 0 0 0px;
 }
+.direita{
+	position: absolute;
+	right:-300px;
+}
+.esquerda{
+	/*padding-left: 20px;*/
+}
+
 .item-carousel{
 	width: 300px;
 	height: 60px;

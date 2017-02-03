@@ -4,7 +4,7 @@
 {% block title %}HUB{% endblock %}
 
 
-{% block extracss %}<link rel="stylesheet" href="{% static 'hub/css/experimentos.css' %}">{% endblock %}
+{% block extracss %}<link rel="stylesheet" href="{% static 'hub/css/apps.css' %}">{% endblock %}
 
 {% block content%}
     <div class="popup">
@@ -28,13 +28,31 @@
                     <img src="{% static 'hub/img/go-arrow.svg' %}">
                 </div>
                 </a>
-                <!-- <div class="card-footer">
+            </div>
+    </div>
 
-                </div> -->
+    <div class="delimitador">
+
+        <div class="card">
+            <div class="header text-center">
+                <div class="inside">
+                </div>
+            </div>
+            <div class="body text-center">
+                <p class="ubold">smartZeus</p>
+                <p class="ulight">Identifica pontos enviados por e-mail</p>
+            </div>
+        </div>
+            <div class="footer-wrapper">
+                <a href="{% url 'smartZeus:index' %}">
+                <div class="go-button transit">
+                    <img src="{% static 'hub/img/go-arrow.svg' %}">
+                </div>
+                </a>
             </div>
     </div>
 
     </div>
 {% endblock %}
 
-{% block extrajs %}<script src="{% static 'hub/js/experimentos.js' %}"></script>{% endblock %}
+{% block extrajs %}<script src="{% static 'hub/js/apps.js' %}"></script>{% endblock %}

@@ -1,11 +1,11 @@
 @font-face {
 	font-family: 'Ubuntu-Bold';
-	src: url("../font/Ubuntu/Ubuntu-Bold.ttf");
+	src: url("../../font/Ubuntu/Ubuntu-Bold.ttf");
 	font-size: 1em;
 }
 @font-face {
 	font-family: 'Ubuntu-Light';
-	src: url("../font/Ubuntu/Ubuntu-Light.ttf");
+	src: url("../../font/Ubuntu/Ubuntu-Light.ttf");
 	font-size: 1em;
 }
 body{
@@ -83,14 +83,6 @@ body{
 	-ms-transform: scale(1.3);
 	transform: scale(1.3);
 }
-/*.card-footer{
-	position: absolute;
-	bottom: 0;
-	width: 80%;
-	height: 0;
-	border: 2px solid red;
-	overflow: visible;
-}*/
 .ubold{
 	font-family: 'Ubuntu-Bold';
 	font-size: 1.5em;
