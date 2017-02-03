@@ -1,9 +1,13 @@
 from django.conf.urls import include, url
 from django.contrib import admin
-from principal.views import pagina_inicial_view
+from views import *
 
 urlpatterns = [
     url(r'^$', pagina_inicial_view,name="pagina_inicial_view"),
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('principal.urls')),
+    #Experimentos webdesign
+    url(r'^experimentos_webdesign/$', experimentos_view, name="experimentos_view"),
+    #Apps python
+    url(r'^apps_python/$', apps_view, name="apps_view"),
+    url(r'^apps_python/torre_de_hanoi/', include('torre_de_hanoi.urls', namespace='torre_de_hanoi')),
 ]

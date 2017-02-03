@@ -43,7 +43,6 @@ DEFAULT_APPS = [
 ]
 
 CUSTOM_APPS = [
-    'principal',
     'torre_de_hanoi'
 ]
 
