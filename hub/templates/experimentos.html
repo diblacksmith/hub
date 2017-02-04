@@ -7,34 +7,19 @@
 {% block extracss %}<link rel="stylesheet" href="{% static 'hub/css/experimentos.css' %}">{% endblock %}
 
 {% block content%}
-    <div class="popup">
-
-    <div class="delimitador">
-
-        <div class="card">
-            <div class="header text-center">
-                <div class="inside">
-
-                </div>
-            </div>
-            <div class="body text-center">
-                <p class="ubold">Torre de Hanoi</p>
-                <p class="ulight">Jogo desenvolvido na ECT</p>
+<div class="popup">
+        <div class="row" style="margin-top:5%;">
+                <p class="text-center light" style="width: 500px;">Escolha um experimento em meu playground</p>
+        </div>
+        <div class="row wrapper">
+            <div class="seletor text-center transit">
+                  <div class="force-overflow">oi</div>
+                  <div id="scroll">
+                      <div class="force-overflow"></div>
+                  </div>
             </div>
         </div>
-            <div class="footer-wrapper">
-                <a href="">
-                <div class="go-button transit">
-                    <img src="{% static 'hub/img/go-arrow.svg' %}">
-                </div>
-                </a>
-                <!-- <div class="card-footer">
-
-                </div> -->
-            </div>
-    </div>
-
-    </div>
+</div>
 {% endblock %}
 
 {% block extrajs %}<script src="{% static 'hub/js/experimentos.js' %}"></script>{% endblock %}
