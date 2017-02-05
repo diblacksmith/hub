@@ -8,24 +8,23 @@
 
 {% block content%}
 <div class="popup">
-        <div class="row text-center">
-                <img src="{% static 'hub/img/crown.png' %}" style="margin-top:20%;">
-        </div>
         <div class="row" style="margin-top:5%;">
-                <p class="text-center bold text">H U B</p>
+                <p class="text-center light" style="width: 500px;">Envie um e-mail para seu gestor de RH.</p>
         </div>
         <div class="row">
-                <p class="text-center light text" style="width: 500px;">Escolha um destino em meu Hub</p>
+            <div class="input text-center transit">
+                <form method="get" data-ajax-url="{% url 'smartZeus:identificarPonto_view' %}">
+                    {% csrf_token %}
+                    {{formulario}}
+                </form>
+            </div>
         </div>
-        <div class="box">
-                <span class="left-arrow transit grow-big"></span>
-                <div class="carousel text-center transit grow-little">
-                        <div class="esquerda transit item-carousel">Experimentos Webdesign</div>
-                        <div class="direita transit item-carousel">Apps python</div>
-                </div>
-                <span class="right-arrow transit grow-big"></span>
+        <div id="chamar_ajax" class="text-center">
+            <div class="botao-grande">
+                <img src="{% static 'smartZeus/img/send-mail.png' %}">
+            </div>
         </div>
 </div>
 {% endblock %}
 
-{% block extrajs %}<script src="{% static 'smartZeus/js/index.js' %}"></script>{% endblock %}
+{% block extrajs %}<script src="{% static 'smartZeus/js/index.js' %}"/>{% endblock %}

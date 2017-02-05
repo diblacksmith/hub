@@ -8,40 +8,6 @@
 	src: url("../../font/Ubuntu/Ubuntu-Light.ttf");
 	font-size: 1em;
 }
-@-webkit-keyframes swing
-{
-    15%
-    {
-        -webkit-transform: translateX(5px);
-        transform: translateX(5px);
-    }
-    30%
-    {
-        -webkit-transform: translateX(-5px);
-       transform: translateX(-5px);
-    }
-    50%
-    {
-        -webkit-transform: translateX(3px);
-        transform: translateX(3px);
-    }
-    65%
-    {
-        -webkit-transform: translateX(-3px);
-        transform: translateX(-3px);
-    }
-    80%
-    {
-        -webkit-transform: translateX(2px);
-        transform: translateX(2px);
-    }
-    100%
-    {
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-    }
-}
-
 .popup{
     position: absolute;
     background: white;
@@ -50,84 +16,46 @@
     box-shadow: 0px 40px 150px #748da6;
     border-radius: 10px;
 }
-.box{
-    position: relative;
-}
-
-.bold{
-    font-family: 'Ubuntu-Bold';
-    font-size: 2em;
-}
 .light{
     font-family: 'Ubuntu-Light';
     font-size: 1.5em;
 }
-.carousel{
-    background: #68B7F6;
-    color: white;
-    width: 300px;
-    line-height: 300%;
-	height: 100px;
-    border-radius: 30px;
-    font-family: 'Ubuntu-Bold';
-    font-size: 1.5em;
-    box-shadow: 0px 20px 50px #748da6;
-	margin: 50px 0 30px 85px;
+.input{
+	margin: 0 0 5% 10%;
+	float: left;
+	height: 270px;
+	width: 80%;
+	background: #FFF;
+	border-radius: 10px;
+	margin-bottom: 50px;
+	box-shadow: inset 0px 0px 20px rgba(2,95,173,0.6);
 	overflow: hidden;
-	position: relative;
-	z-index: 10
-
 }
-.transit{
+form{
+	height: 100%;
+}
+textarea{
+	border: none;
+	background: rgba(0,0,0,0);
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	padding: 25px;
+	font-family: 'Ubuntu-Bold';
+	font-size: 1em;
+}
+#chamar_ajax{
+	position: relative;
+}
+.botao-grande{
+	width: 32px;
+	position: absolute;
+	top: -45px;
+	left: 47%;
 	transition: all 0.2s;
 }
-.grow-little:hover{
+.botao-grande:hover{
         -webkit-transform: scale(1.1);
         -ms-transform: scale(1.1);
         transform: scale(1.1);
-}
-.grow-big:hover{
-        -webkit-transform: scale(1.3);
-        -ms-transform: scale(1.3);
-        transform: scale(1.3);
-}
-.right-arrow{
-	width: 50px;
-	height: 50px;
-	margin: 30px;
-	position: absolute;
-	right: 0;
-	top: 0;
-	background-image: url('../img/angle-right.svg');
-    background-repeat: no-repeat;
-    background-size: 32px;
-    background-position: 95% 50%;
-}
-.left-arrow{
-	width: 50px;
-	height: 50px;
-	margin: 30px;
-	position: absolute;
-	top: 0;
-	background-image: url('../img/angle-left.svg');
-    background-repeat: no-repeat;
-    background-size: 32px;
-    background-position: 5% 50%;
-}
-
-.carousel div {
-	float: left;
-	margin: 20px 0 0 0px;
-}
-.direita{
-	position: absolute;
-	right:-300px;
-}
-.esquerda{
-	/*padding-left: 20px;*/
-}
-
-.item-carousel{
-	width: 300px;
-	height: 60px;
 }
