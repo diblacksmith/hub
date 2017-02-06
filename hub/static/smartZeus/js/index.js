@@ -6,8 +6,11 @@ $("#chamar_ajax").click(function () {
     data:  formulario.serialize(),
     dataType: 'json',
     success: function (data) {
-      console.log(data.corpo_texto)
-    }
+      console.log(`Datas encontradas: ${data.datas}\n\nHoras encontradas: ${data.horas}`)
+  },
+      error : function(xhr,errmsg,err) {
+              console.log(errmsg);
+          }
   });
 
 });
