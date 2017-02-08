@@ -8,12 +8,12 @@ import re
 
 def index(request):
     formulario = IdentificarPonto_form()
-    return render(request, 'smartZeus/index.html', locals())
+    return render(request, 'index.html', locals())
 
 def identificarPonto_view(request):
     hora = re.compile('\d{1,2}[:h]{1}\d*')
     data = re.compile(u'ontem|hoje|segunda|ter[çc]a|quarta|quinta|sexta|s[aá]bado|domingo|\d{1,2}/\d{1,2}/\d*|\d{1,2}/\d{1,2}')
-    user_email = re.compile('[a-zA-Z0-9_.]+@(?:lais.huol.ufrn.br|gmail.com)')
+    user_email = re.compile('[a-zA-Z0-9_.]+@[a-z.]+(?:.br|.com)')
 
     corpo_texto = request.GET.get('corpo_texto', None)
 
