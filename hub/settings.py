@@ -44,7 +44,8 @@ DEFAULT_APPS = [
 
 CUSTOM_APPS = [
     'torre_de_hanoi',
-    'smartZeus'
+    'smartZeus',
+    'autoclado'
 ]
 
 INSTALLED_APPS = DEFAULT_APPS + CUSTOM_APPS

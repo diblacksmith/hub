@@ -3,12 +3,10 @@ from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse
 from django.http import JsonResponse
-from .forms import IdentificarPonto_form
 import re
 
 def index(request):
-    formulario = IdentificarPonto_form()
-    return render(request, 'smartZeus/index.html', locals())
+    return render(request, 'autoclado/index.html', locals())
 
 def identificarPonto_view(request):
     hora = re.compile('\d{1,2}[:h]{1}\d*')

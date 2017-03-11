@@ -1,0 +1,72 @@
+@font-face {
+	font-family: 'Ubuntu-Bold';
+	src: url("../../font/Ubuntu/Ubuntu-Bold.ttf");
+	font-size: 1em;
+}
+@font-face {
+	font-family: 'Ubuntu-Light';
+	src: url("../../font/Ubuntu/Ubuntu-Light.ttf");
+	font-size: 1em;
+}
+.popup{
+    position: absolute;
+    background: white;
+    box-shadow: 0px 40px 150px #748da6;
+    border-radius: 10px;
+}
+#entrada_texto{
+	top: 5vh;
+	left: 30vw;
+	width: 400px;
+}
+#sugestoes{
+	top: 30vh;
+	left: 30vw;
+	width: 400px;
+}
+#saida_texto{
+	top: 50vh;
+	left: 30vw;
+	width: 400px;
+	height: 100px;
+}
+.light{
+    font-family: 'Ubuntu-Light';
+    font-size: 1.5em;
+}
+.input{
+	margin: 5% 0 0 10%;
+	float: left;
+	height: 70px;
+	width: 80%;
+	background: #FFF;
+	border-radius: 10px;
+	margin-bottom: 50px;
+	box-shadow: inset 0px 0px 20px rgba(2,95,173,0.6);
+	overflow: hidden;
+}
+textarea{
+	border: none;
+	background: rgba(0,0,0,0);
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	padding: 25px;
+	font-family: 'Ubuntu-Bold';
+	font-size: 1em;
+}
+#chamar_ajax{
+	position: relative;
+}
+.botao-grande{
+	width: 32px;
+	position: absolute;
+	top: -45px;
+	left: 47%;
+	transition: all 0.2s;
+}
+.botao-grande:hover{
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+}

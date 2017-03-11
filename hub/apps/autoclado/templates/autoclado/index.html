@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}autoclado{% endblock %}
+
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'autoclado/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'autoclado/css/sugestoes.css' %}">
+{% endblock %}
+
+{% block content%}
+<div class="popup" id="entrada_texto">
+            <div class="input text-center transit">
+                    <textarea cols="40" id="id_corpo_texto" placeholder="Digite algum texto." rows="1" class="text-center"></textarea>
+            </div>
+</div>
+
+<div class="popup" id="sugestoes">
+        <div class="row" style="margin-top:5%;">
+            <p class="text-center light">sugestões</p>
+        </div>
+        <div class="row wrapper">
+            <div class="item-selecionavel">beyuunda</div>
+            <div class="item-selecionavel">beyuunda</div>
+            <div class="item-selecionavel">beyuunda</div>
+        </div>
+</div>
+
+<div class="popup" id="saida_texto">
+        <div class="row" style="margin-top:5%;">
+            <p id="text_container" class="text-center light"></p>
+        </div>
+</div>
+
+{% endblock %}
+
+{% block extrajs %}<script src="{% static 'autoclado/js/index.js' %}"></script>{% endblock %}
