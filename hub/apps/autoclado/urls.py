@@ -3,5 +3,6 @@ from views import *
 
 urlpatterns = [
     url(r'^$', index, name="index"),
-    url(r'^identificarPonto$', identificarPonto_view, name="identificarPonto_view"),
+    url(r'^buscar_sugestoes$', buscar_sugestoesView, name="buscar_sugestoesView"),
+    url(r'^reconhecer_palavras$', reconhecer_palavrasView, name="reconhecer_palavrasView"),
 ]

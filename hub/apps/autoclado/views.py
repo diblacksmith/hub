@@ -3,17 +3,56 @@ from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse
 from django.http import JsonResponse
-import re
+import re, sqlite3
 
 def index(request):
     return render(request, 'autoclado/index.html', locals())
 
-def identificarPonto_view(request):
-    hora = re.compile('\d{1,2}[:h]{1}\d*')
-    data = re.compile(u'ontem|hoje|segunda|ter[çc]a|quarta|quinta|sexta|s[aá]bado|domingo|\d{1,2}/\d{1,2}/\d*|\d{1,2}/\d{1,2}')
-    user_email = re.compile('[a-zA-Z0-9_.]+@[a-z.]+(?:.br|.com)')
+def buscar_sugestoesView(request):
+    texto_completo = request.GET.get("texto_completo")
+    conn = sqlite3.connect("autonomus.db")
+    cursor = conn.cursor()
 
-    corpo_texto = request.GET.get('corpo_texto', None)
+    split = texto_completo.split()
+    palavra_atual = split[-1] if len(split)>0 else ""
+    sql = "SELECT palavra FROM palavras WHERE palavra LIKE '%s' ORDER BY ocorrencias DESC LIMIT 5" % (palavra_atual+"%")
 
-    data = {'horas':hora.findall(corpo_texto), 'datas':data.findall(corpo_texto), 'user_email': user_email.findall(corpo_texto)}
+    cursor.execute(sql)
+    resultado = [x for x in cursor.fetchall()]
+
+    data = {"resultado":resultado}
+
+    conn.commit()
+    conn.close()
+    return JsonResponse(data)
+
+def reconhecer_palavrasView(request):
+    texto_completo = request.GET.get("texto_completo")
+    conn = sqlite3.connect("autonomus.db")
+    cursor = conn.cursor()
+
+    split = texto_completo.split()
+    if len(split)==0:
+        return JsonResponse({resultado:""})
+
+    palavras_adicionadas = []
+    for palavra in split:
+        sql = "SELECT * FROM palavras WHERE palavra = '%s'" % (palavra)
+        cursor.execute(sql)
+        lista_resultante = cursor.fetchall()
+        if len(lista_resultante) == 0:
+            sql = "INSERT INTO palavras (palavra, ocorrencias) VALUES (?,?)"
+            cursor.execute(sql,(palavra,1))
+        else:
+            sql = "UPDATE palavras SET ocorrencias = ? WHERE palavra = ?"
+            cursor.execute(sql, (lista_resultante[0][2] + 1, lista_resultante[0][1]))
+            palavras_adicionadas.append(palavra)
+
+
+
+
+    data = {"palavras_adicionadas":palavras_adicionadas}
+
+    conn.commit()
+    conn.close()
     return JsonResponse(data)
