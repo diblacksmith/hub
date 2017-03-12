@@ -2,30 +2,13 @@ $("#id_corpo_texto").on('input', function() {
     $("#text_container").text($("#id_corpo_texto").val()).trigger("change");
 });
 
-$("#chamar_ajax").click(function () {
-  var corpo_texto = $("#id_corpo_texto").val();
-  var formulario = $("#id_corpo_texto").closest("form");
-  $.ajax({
-    url: formulario.attr("data-ajax-url"),
-    data:  formulario.serialize(),
-    dataType: 'json',
-    success: function (data) {
-      console.log(`Datas encontradas: ${data.datas}\n\nHoras encontradas: ${data.horas}`)
-  },
-      error : function(xhr,errmsg,err) {
-              console.log(errmsg);
-          }
-  });
-
-});
-$("#text_container").on("change", function(){
+var receber_sugestoes = function(){
     $.ajax({
       url: "/apps_python/autoclado/buscar_sugestoes",
       data:  {"texto_completo":$("#text_container").text()},
       dataType: 'json',
       success: function (data) {
           $(".wrapper").empty();
-          console.log(data)
           data.resultado.forEach(function(i){
               $(".wrapper").append(`<div class="item-selecionavel">${i[0]}</div>`);
           })
@@ -37,18 +20,20 @@ $("#text_container").on("change", function(){
             }
     });
 
-});
+}
 
-var chamar = function(){
+$("#text_container").on("change", receber_sugestoes);
+
+$(".botao-grande").click(function(){
     $.ajax({
       url: "/apps_python/autoclado/reconhecer_palavras",
       data:  {"texto_completo":$("#text_container").text()},
       dataType: 'json',
       success: function (data) {
-        console.log(data)
+        receber_sugestoes();
     },
         error : function(xhr,errmsg,err) {
                 console.log(errmsg);
             }
     });
-}
+});
