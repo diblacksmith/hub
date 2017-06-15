@@ -1,0 +1,80 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="{% static 'vue/css/search.css' %}">
+</head>
+
+<body>
+    <div id="main" class="search" v-cloak>
+
+        <input type="text" placeholder="Nome de usuário..." v-model="searchString" @focus="show_tooltip = true" @blur="show_tooltip = false"/>
+
+        <div class="tooltip" v-if="show_tooltip">
+            <ul class="results">
+                <li v-for="article in filteredArticles">
+                    <a href="index.html">!!article.title!!<br /><span>!!article.username!!</span></a>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+</body>
+
+<script src="{% static 'js/vue.min.js' %}"></script>
+
+<script type="text/javascript">
+// Creating a new Vue instance and pass in an options object.
+var demo = new Vue({
+    delimiters: ['!!','!!'],
+    // A DOM element to mount our view model.
+    el: '#main',
+
+    // Define properties and give them initial values.
+    data: {
+        show_tooltip: false,
+        searchString: "",
+        articles: [
+            {
+                "title": "What You Need To Know About CSS Variables",
+                "username":"username",
+                "email":"email"
+            },
+            {
+                "title": "Freebie: 4 Great Looking Pricing Tables",
+                "username":"username",
+                "email":"email"
+            }
+        ]
+
+    },
+    computed: {
+        // A computed property that holds only those articles that match the searchString.
+        filteredArticles: function () {
+            var articles_array = this.articles,
+            searchString = this.searchString;
+
+            if(!searchString){
+                return articles_array;
+            }
+
+            searchString = searchString.trim().toLowerCase();
+
+            articles_array = articles_array.filter(function(item){
+                if(item.title.toLowerCase().indexOf(searchString) !== -1){
+                    return item;
+                }
+            })
+
+            // Return an array with the filtered data.
+            return articles_array;;
+        }
+    },
+
+})
+</script>
+</html>

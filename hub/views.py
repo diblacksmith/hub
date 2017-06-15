@@ -11,4 +11,8 @@ def apps_view(request):
     return render(request, "apps.html")
 
 def experimentos_view(request):
-    return render(request, "experimentos.html")
+    return render(request, "experimentos.html", locals())
+
+def tooltip(request):
+    text_content = 'af'
+    return render(request, "tooltip.html", locals())
