@@ -15,8 +15,8 @@
 
         <div class="tooltip" v-if="show_tooltip">
             <ul class="results">
-                <li v-for="article in filteredArticles">
-                    <a href="index.html">!!article.title!!<br /><span>!!article.username!!</span></a>
+                <li v-for="user in filteredUsers">
+                    <a href="index.html">!!user.nome!!<br /><span>!!user.descricao!!</span></a>
                 </li>
             </ul>
         </div>
@@ -26,6 +26,7 @@
 </body>
 
 <script src="{% static 'js/vue.min.js' %}"></script>
+<script src="{% static 'js/axios.min.js' %}"></script>
 
 <script type="text/javascript">
 // Creating a new Vue instance and pass in an options object.
@@ -38,40 +39,35 @@ var demo = new Vue({
     data: {
         show_tooltip: false,
         searchString: "",
-        articles: [
-            {
-                "title": "What You Need To Know About CSS Variables",
-                "username":"usernamy",
-                "email":"email"
-            },
-            {
-                "title": "Freebie: 4 Great Looking Pricing Tables",
-                "username":"username",
-                "email":"email"
-            }
-        ]
+        users: ['diego']
 
     },
+
+    mounted() {
+        axios.get('http://localhost:8001/api/v0/competencias').then(function(response){
+            this.users = response.data.dados;
+        }.bind(this));
+    },
     computed: {
-        // A computed property that holds only those articles that match the searchString.
-        filteredArticles: function () {
-            var articles_array = this.articles,
+        // A computed property that holds only those users that match the searchString.
+        filteredUsers: function () {
+            var users_array = this.users,
             searchString = this.searchString;
 
             if(!searchString){
-                return articles_array;
+                return users_array;
             }
 
             searchString = searchString.trim().toLowerCase();
 
-            articles_array = articles_array.filter(function(item){
-                if(item.title.toLowerCase().indexOf(searchString) !== -1){
+            users_array = users_array.filter(function(item){
+                if(item.nome.toLowerCase().indexOf(searchString) !== -1 || item.descricao.toLowerCase().indexOf(searchString) !== -1){
                     return item;
                 }
             })
 
             // Return an array with the filtered data.
-            return articles_array;;
+            return users_array;
         }
     },
 
