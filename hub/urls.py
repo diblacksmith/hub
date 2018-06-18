@@ -8,6 +8,7 @@ urlpatterns = [
     #Experimentos webdesign
     url(r'^experimentos_webdesign/$', experimentos_view, name="experimentos_view"),
     url(r'^tooltip/$', tooltip, name="tooltip"),
+    url(r'^sequencia_kit/$', sequencia_kit, name="sequencia_kit"),
     #Apps python
     url(r'^apps_python/$', apps_view, name="apps_view"),
     url(r'^apps_python/torre_de_hanoi/', include('torre_de_hanoi.urls', namespace='torre_de_hanoi')),
