@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ana</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"></link>
+    <script src="https://code.jquery.com/jquery-1.12.4.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js">
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="panel panel-primary" style="width:750px;margin:100px auto">
+        <div class="panel-heading">Gerar Sequências </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-6">
+                <form class="" action="{% url 'sequencia_kit' %}" method="post">
+                  {% csrf_token %}
+                  <div class="form-group">
+                    <label for="qtd" class="control-label">Quantidade de Sequências</label>
+                    <input type="text" class="form-control" name="qtd" value="" id="qtd">
+                  </div>
+                  <div class="form-group">
+                    <label for="qtd" class="control-label">Número de Elementos</label>
+                    <input type="text" class="form-control" name="tam" value="">
+                  </div>
+                  <div class="form-group">
+                    <label for="qtd" class="control-label">Valor Mínimo</label>
+                    <input type="text" class="form-control" name="min" value="">
+                  </div>
+                  <div class="form-group">
+                    <label for="qtd" class="control-label">Valor Máximo</label>
+                    <input type="text" class="form-control" name="max" value="">
+                  </div>
+                  <div class="form-group">
+                    <button class="btn btn-primary" type="submit">
+                        Gerar
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div class="col-md-6">
+                  <ul>
+                    {% for seq in sequencias %}
+                    <li>{{seq}}</li>
+                    {% endfor %}
+                  </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
